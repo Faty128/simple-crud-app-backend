@@ -9,16 +9,19 @@ const {
   deleteProduct,
 } = require("../controllers/product.controller.js");
 
+// Obtenir tous les produits
 router.get("/", getProducts);
 
+// Obtenir un produit par ID
 router.get("/:id", getProduct);
 
+// Créer un nouveau produit
 router.post("/", createProduct);
 
-// Update a product
+// Mettre à jour un produit par ID
 router.put("/:id", updateProduct);
 
-// delete a product
-router.put("/:id", deleteProduct);
+// Supprimer un produit par ID
+router.delete("/:id", deleteProduct); // Correction ici : utilisez .delete au lieu de .put
 
 module.exports = router;
